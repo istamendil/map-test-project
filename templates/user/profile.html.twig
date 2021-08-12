@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    This is profile page accessible only by authorized users. Your data is
+    <table class="table">
+        <tr>
+            <td>Id</td><td>{{ app.user.id }}</td>
+        </tr>
+        <tr>
+            <td>Email</td><td>{{ app.user.email }}</td>
+        </tr>
+        <tr>
+            <td>Nickname</td><td>{{ app.user.nickname }}</td>
+        </tr>
+        <tr>
+            <td>Roles</td><td>{{ app.user.roles|join(', ') }}</td>
+        </tr>
+        <tr>
+            <td>Full name</td><td>{{ app.user.fullname?:'&ndash;' }}</td>
+        </tr>
+    </table>
+{% endblock %}

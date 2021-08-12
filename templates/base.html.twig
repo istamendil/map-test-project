@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="page-viewport">
+            <div class="page-header">
+                <div class="page-wrapper">
+                    <div class="page-header-row">
+                        {% include '_nav_top.html.twig' %}
+                    </div>
+                </div>
+            </div>
+            <div class="page-main">
+                <div class="page-wrapper">
+                    <div class="page-main-row">
+                        <div class="main-col">
+                            {% block body %}{% endblock %}
+                        </div>
+                        {# <div class="aside-col"></div> #}
+                    </div>
+                </div>
+            </div>
+            {# <div class="page-footer"></div> #}
+        </div>
+    </body>
+</html>

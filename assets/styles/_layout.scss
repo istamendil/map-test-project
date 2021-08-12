@@ -1,0 +1,17 @@
+.page-main{
+  margin-top:1rem;
+}
+.page-main-row, .page-header-row{
+  @extend .row;
+}
+.page-viewport{
+  min-height:100vh;
+}
+.page-wrapper{
+  @extend .container;
+}
+
+.page-main .page-wrapper .page-main-row .main-col{
+  @extend .col-12;
+  padding:0px 15px;
+}
