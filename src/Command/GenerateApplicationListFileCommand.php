@@ -13,7 +13,6 @@ use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 class GenerateApplicationListFileCommand extends Command
 {
     private const FILE_PATH = 'public/data.json';
-    private const DEFAULT_COORDINATES = '55.331903, 37.111961';
     protected static $defaultName = 'app:application:file';
 
     protected ContainerBagInterface $containerBag;
@@ -51,7 +50,7 @@ class GenerateApplicationListFileCommand extends Command
         /** @var Application $application */
         while($application = $prep->fetch()){
             $id = $application->getId();
-            $coordinates = self::DEFAULT_COORDINATES;
+            $coordinates = $application->getAddress();
             $title = $application->getTitle();
             $last = $i===$count;
             fwrite($f, '{"type":"Feature","id":'.$id.',"geometry":{"type": "Point","coordinates": ['.$coordinates.']},"properties":{"balloonContent":"'.$title.'"}}'.($last?'':','));

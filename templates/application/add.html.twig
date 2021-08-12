@@ -10,7 +10,7 @@
     {{ form_row(form.title, {'attr': {'placeholder': 'Problem with a tree.'} }) }}
     {{ form_row(form.contents, {'attr': {'placeholder': 'Some description of a problem here.'} }) }}
     {{ form_row(form.city, {'attr': {'placeholder': 'Moscow'} }) }}
-    {{ form_row(form.address, {'attr': {'placeholder': 'Krasnaya ploshad\', 7'} }) }}
+    {{ form_row(form.address, {'label': 'Coordinates', 'attr': {'placeholder': '55.763338, 37.565466'} }) }}
 
     <button type="submit" class="btn btn-primary">Apply</button>
     {{ form_end(form) }}
