@@ -7,6 +7,15 @@ require('bootstrap/js/dist/collapse');
 // start the Stimulus application
 // import './bootstrap';
 
-$(document).ready(function() {
-
-});
+ymaps.ready(init);
+function init(){
+  let indexMap = new ymaps.Map("index-map", {
+    center: config.mapCenter,
+    zoom: 7
+  });
+  var objectManager = new ymaps.ObjectManager();
+  $.getJSON(config.dataFileURL).done(function(data){
+    objectManager.add(data);
+    indexMap.geoObjects.add(objectManager);
+  });
+}

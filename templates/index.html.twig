@@ -1,5 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% set disable_wrapping_content = true %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey={{ yandex_key }}&lang=ru_RU" type="text/javascript"></script>
+    <script>
+        config = {
+            mapCenter: [{{ mapCenter }}],
+            dataFileURL: '/data.json'
+        };
+    </script>
+{% endblock %}
+
 {% block body %}
-    This is index page.
+    <div id="index-map" style="width:100%;height:850px"></div>{# ToDo: move to scss + set correct elative sizes. #}
 {% endblock %}

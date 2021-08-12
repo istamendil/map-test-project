@@ -20,7 +20,9 @@ class MainController extends AbstractController
      */
     public function index(ContainerBagInterface $c)
     {
-        return $this->render('index.html.twig');
+        return $this->render('index.html.twig', [
+            'mapCenter' => $c->get('app.yandex.map_center'), //Could be guessed depending on loading data etc. So now it's only param.
+        ]);
     }
 
 }

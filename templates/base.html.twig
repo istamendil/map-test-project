@@ -29,14 +29,14 @@
                 </div>
             </div>
             <div class="page-main">
-                <div class="page-wrapper">
+                {% if disable_wrapping_content is not defined  %}<div class="page-wrapper">{% endif %}
                     <div class="page-main-row">
                         <div class="main-col">
                             {% block body %}{% endblock %}
                         </div>
                         {# <div class="aside-col"></div> #}
                     </div>
-                </div>
+                {% if disable_wrapping_content is not defined  %}</div>{% endif %}
             </div>
             {# <div class="page-footer"></div> #}
         </div>
